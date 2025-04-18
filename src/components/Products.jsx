@@ -8,10 +8,13 @@ import { fetchProducts } from "../store/actions";
 
 const Products = () => {
 
-    const isLoading = false;
-    const errorMessage = "";
+    // const isLoading = false;
+    // const errorMessage = "";
     const {products} = useSelector(
         (state) => state.products
+    )
+    const {isLoading, errorMessage} = useSelector(
+        (state) => state.errors
     )
     const dispatch = useDispatch();
 
