@@ -50,13 +50,13 @@ const handleClickOpen = () => {
                         {Number(price).toFixed(2)}
                       </span>
                       <span className="sm:text-xl font-semibold text-slate-700">
-                        ${Number(specialPrice).toFixed(2)}
+                      ₹{Number(specialPrice).toFixed(2)}
                       </span>
                     </div>
                   ) : (
                     <span className="text-xl font-bold">
                       {" "}
-                      ${Number(price).toFixed(2)}
+                      ₹{Number(price).toFixed(2)}
                     </span>
                   )}
 
