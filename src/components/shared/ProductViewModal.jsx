@@ -47,7 +47,7 @@ const handleClickOpen = () => {
                   {specialPrice ? (
                     <div className="flex items-center gap-2">
                       <span className="text-gray-400 line-through">
-                        {Number(price).toFixed(2)}
+                      ₹{Number(price).toFixed(2)}
                       </span>
                       <span className="sm:text-xl font-semibold text-slate-700">
                       ₹{Number(specialPrice).toFixed(2)}
