@@ -88,7 +88,7 @@ const ProductCard = ({
             disabled={!isAvailable || btnLoader}
             onClick={() => {}}
             className={`bg-blue-500 ${isAvailable ? "opacity-100 hover:bg-blue-600" : "opacity-70"}
-             text-white py-2 px-3 round-lg items-center transition-colors duration-300 2-36 flex`}>
+             text-white py-2 px-3 rounded-lg items-center transition-colors duration-300 2-36 flex`}>
                 <FaShoppingCart className="mr-2"/>
                 {isAvailable ? "Add to cart" : "Stock out"}
             </button>
