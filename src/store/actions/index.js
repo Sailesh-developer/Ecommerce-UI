@@ -50,6 +50,7 @@ export const fetchCategories = () => async (dispatch) => {
 
 export const addToCart = (data, qty = 1, toast) => (dispatch, getState) => {
     //Find the product
+    console.log("addtocart" , getState());
     const {products} = getState().products;
    
     const getProduct = products.find(
@@ -68,5 +69,35 @@ export const addToCart = (data, qty = 1, toast) => (dispatch, getState) => {
         // error
         toast.error("Out of stock");
     }
+
+}
+
+export const increaseCartQuantity = 
+(data, toast, currentQuantity, setCurrentQuantity) => 
+(dispatch, getState) => {
+    // Find the product
+    console.log("data",data);
+    console.log(getState());
+    const {products} = getState().products;
+   
+    const getProduct = products.find(
+        (item) => item.productId === data.productId
+    );
+
+    const isQuantityExist = getProduct.quantity >= currentQuantity + 1;
+
+    if(isQuantityExist) {
+        const newQuantity = currentQuantity + 1;
+        setCurrentQuantity(newQuantity);
+
+        dispatch({
+             type: "ADD_CART",
+             payload: {...data, quantity: newQuantity + 1},
+        });
+        localStorage.setItem("cartItems" , JSON.stringify(getState().carts.cart));
+    } else {
+        toast.error("Quantity reached to limit");
+    }
+
 
 }
