@@ -15,12 +15,13 @@ const Cart = () => {
            (acc, cur) => acc * Number(cur?.specialPrice) * Number(cur?.quantity), 0
        );
 
-       if(!cart || cart.length === 0) return <h1>Cart is Empty</h1>;
+       
 
            useEffect(() => {
                dispatch(fetchProducts());
            },[dispatch])
 
+           if(!cart || cart.length === 0) return <h1>Cart is Empty</h1>;
 
     return (
         <div className="lg:px-14 sm:px-8 px-4 py-10">
