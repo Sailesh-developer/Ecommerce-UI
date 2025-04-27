@@ -2,6 +2,8 @@ import { MdArrowBack, MdShoppingCart } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ItemContent from "./ItemContent";
+import { useEffect } from "react";
+import { fetchProducts } from "../../store/actions";
 
 const Cart = () => {
 
@@ -14,6 +16,10 @@ const Cart = () => {
        );
 
        if(!cart || cart.length === 0) return <h1>Cart is Empty</h1>;
+
+           useEffect(() => {
+               dispatch(fetchProducts());
+           },[dispatch])
 
 
     return (
