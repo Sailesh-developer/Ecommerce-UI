@@ -9,6 +9,7 @@ const InputField = ({
     min,
     value,
     placeholder,
+    required,
 }) => {
     return (
         <div className="flex flex-col gap-1 w-full">
@@ -56,3 +57,5 @@ const InputField = ({
         </div>
     )
 }
+
+export default InputField;
