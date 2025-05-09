@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { AiOutlineLogin } from 'react-icons/ai';
 import InputField from "../shared/InputField";
-import shoppingCart from '../../assets/shopping-cart.png';
+import shoppingCart from '../../assets/shopping-cart-with-background.png';
 import { useDispatch } from "react-redux";
 import { authenticateSignInUser } from "../../store/actions";
 import toast from "react-hot-toast";
