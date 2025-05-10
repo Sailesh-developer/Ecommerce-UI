@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AiOutlineLogin } from 'react-icons/ai';
 import InputField from "../shared/InputField";
 import { useDispatch } from "react-redux";
-import { authenticateSignInUser } from "../../store/actions";
+import { authenticateSignInUser, registerNewUser } from "../../store/actions";
 import toast from "react-hot-toast";
 import Reg_image from "../../assets/for-registration.png"
 
@@ -12,7 +12,7 @@ const Register = () => {
 
  const navigate = useNavigate();
     const [loader, setLoader] = useState(false);
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const {
         register,
@@ -25,7 +25,7 @@ const Register = () => {
 
     const registerHandler = async (data) => {
         console.log("Register Click");
-        // dispatch(authenticateSignInUser(data,toast,reset,navigate,setLoader));
+        dispatch(registerNewUser(data,toast,reset,navigate,setLoader));
     }
 
     return(
