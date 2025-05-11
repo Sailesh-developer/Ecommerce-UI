@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { authenticateSignInUser, registerNewUser } from "../../store/actions";
 import toast from "react-hot-toast";
 import Reg_image from "../../assets/for-registration.png"
+import Spinners from "../shared/Spinners";
 
 const Register = () => {
 
@@ -94,7 +95,9 @@ const Register = () => {
              type="submit"
              >
                 {loader ? (
-                  <>Loading...</>
+                  <>
+                 <Spinners /> Loading...
+                  </>
                 ) : (
                    <>Register</>
                 )}

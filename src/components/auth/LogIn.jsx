@@ -7,6 +7,7 @@ import shoppingCart from '../../assets/shopping-cart-with-background.png';
 import { useDispatch } from "react-redux";
 import { authenticateSignInUser } from "../../store/actions";
 import toast from "react-hot-toast";
+import Spinners from "../shared/Spinners";
 
 
 const LogIn = () => {
@@ -83,7 +84,9 @@ const LogIn = () => {
              type="submit"
              >
                 {loader ? (
-                  <>Loading...</>
+                  <>
+                  <Spinners />Loading...
+                  </>
                 ) : (
                    <>Login</>
                 )}
