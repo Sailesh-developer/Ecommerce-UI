@@ -46,7 +46,7 @@ return(
                 <InputField
                 label="Building Name"
                 required
-                id="building"
+                id="buildingName"
                 type="text"
                 message="*Building Name is required"
                 placeholder="Enter Building Name"
