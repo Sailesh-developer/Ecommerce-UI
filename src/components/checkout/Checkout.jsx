@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import AddressInfo from "./AddressInfo";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserAddresses } from "../../store/actions";
+import Skeletons from "../shared/Skeleton";
+import ErrorPage from "../shared/ErrorPage";
 
 
 const Checkout = () => {
@@ -57,9 +59,17 @@ const Checkout = () => {
                ))}
           </Stepper>
 
-          <div className="mt-5">
-            {activeStep === 0 && (<AddressInfo address={address}/>) }
-          </div>
+          {isLoading ? (
+               <div className='max-w-screen-lg mx-auto py-20 px-74 w-full'>
+                 <Skeletons />
+               </div>
+          ) : (
+                  <div className="mt-5">
+                     {activeStep === 0 && (<AddressInfo address={address}/>) }
+                  </div>
+          )}
+
+         
 
           <div className="flex justify-between items-center px-4 fixed z-50 h-24 bottom-0 bg-white left-0 w-full py-4 border-slate-200"
           style={{boxShadow: "0 -2px 4px rgba(100,100,100,0.15)"}}
@@ -93,6 +103,8 @@ const Checkout = () => {
            )
            }
           </div>
+
+          {errorMessage && <ErrorPage message={errorMessage}/>}
        </div>
     )
 }

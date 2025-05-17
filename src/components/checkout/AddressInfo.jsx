@@ -1,4 +1,4 @@
-import { Skeleton } from "@mui/material";
+
 import React, { useState } from "react";
 import { FaAddressBook } from "react-icons/fa";
 import AddressInfoModal from "./AddressInfoModal";
@@ -8,6 +8,7 @@ import AddressList from "./AddressList";
 import { DeleteModal } from "./DeleteModal";
 import { deleteUserAddresses } from "../../store/actions";
 import toast from "react-hot-toast";
+import Skeletons from "../shared/Skeleton";
 
 const AddressInfo = ({ address }) => {
 
@@ -33,19 +34,7 @@ const AddressInfo = ({ address }) => {
     const noAddressExist = !address || address.length === 0;
     const {isLoading, btnLoader} = useSelector((state) => state.errors);
 
-    const skeletons = [
-    <Skeleton variant="rectangular" width={400} height={60}/> , 
-    <Skeleton variant="text" sx={{ fontSize: '1rem' }} width={400} />
-                    ]
 
-
-   const showSkeletons = [] 
-   
-   for(let i=0; i < 5 ; i++) {
-              skeletons.map((skeleton , index) => (
-      showSkeletons.push(React.cloneElement(skeleton, { key: `${i}-${index}`}))
-              ))
-}
 
     return(
         <div className="pt-4">
@@ -73,7 +62,7 @@ const AddressInfo = ({ address }) => {
                  
                   {isLoading ? (
                     <div className="py-8 px-2">
-                       {showSkeletons}
+                       <Skeletons />
                       </div>
                   ) : (
                       <>
