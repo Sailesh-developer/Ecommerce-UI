@@ -49,7 +49,7 @@ const PaymentMethod = () => {
                     <FormControlLabel 
                     value="Paypal" 
                     control={<Radio color='primary'/>} 
-                    label="Male" 
+                    label="Paypal" 
                     className="text-gray-700"/>
                 </RadioGroup>
             </FormControl>
