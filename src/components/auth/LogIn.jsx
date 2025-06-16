@@ -40,6 +40,10 @@ const LogIn = () => {
                className="max-w-full h-auto"
                 />
                 <p className="text-slate-800 text-center font-montserrat lg:text-4xl text-2xl font-bold mr-12.5">Where <span className="text-orange-500">quality</span> meets <span className="text-blue-500">convenience</span></p>
+               <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#7e22ce] to-[#ef4444] font-semibold ml-15"> 
+                      Enjoy a smooth shopping experience from cart to doorstep.
+                      Fast shipping, secure checkout, and easy returns guaranteed.
+                      </p>
              </div>
 
              <div className="w-full md:w-1/2 flex justify-center items-center p-4">
