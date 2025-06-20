@@ -12,7 +12,7 @@ const handleClickOpen = () => {
     setOpen(true)
 }
 
-  const {productId, productName, image, description, quantity, price,discount,specialPrice} = product
+  const {productId, productName, image, description, quantity, price,discount,specialPrice, imageUrl} = product
 
   return (
     <>
@@ -27,10 +27,10 @@ const handleClickOpen = () => {
               className="relative transform overflow-hidden rounded-lg bg-white shadow-xl transition-all md:max-w-[620px] md:min-2-[620px] w-full"
             >
 
-            {image && (
+            {imageUrl && (
               <div className='flex justify-center aspect-[3/2]'>
                 <img 
-                src={image}
+                src={imageUrl}
                 alt={productName}
                 />
                 </div>

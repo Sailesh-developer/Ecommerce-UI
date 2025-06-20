@@ -11,6 +11,7 @@ const ItemContent = ({
     productId,
     productName,
     image,
+    imageUrl,
     description,
     quantity,
     price,
@@ -53,12 +54,13 @@ return(
         </h3>
     </div>
     <div className="md:w-36 sm:w-24 w-12">
-        <img src={image} alt={productName} className="md:h-36 sm:h-24 h-12 w-full object-contain rounded-md"/>
+        <img src={imageUrl} alt={productName} className="md:h-36 sm:h-24 h-12 w-full object-contain rounded-md"/>
    
     <div className="flex items-start gap-5 mt-3">
     <button 
     onClick={() => {removeItemFromCart({
         image,
+        imageUrl,
         productName,
         description,
         specialPrice,
@@ -85,6 +87,7 @@ return(
         cardCounter={true}
         handleQtyIncrease={() => handleQtyIncrease({
             image,
+            imageUrl,
             productName,
             description,
             specialPrice,
@@ -94,6 +97,7 @@ return(
         })}
         handleQtyDecrease={() => handleQtyDecrease({
             image,
+            imageUrl,
             productName,
             description,
             specialPrice,
